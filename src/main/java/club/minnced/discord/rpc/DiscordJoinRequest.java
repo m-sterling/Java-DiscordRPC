@@ -24,9 +24,10 @@ import java.util.List;
 
 /*
 typedef struct DiscordJoinRequest {
-    const char* userId;
-    const char* username;
-    const char* avatar;
+    const char userId[22];
+    const char username[130];
+    const char discriminator[6];
+    const char avatar[36];
 } DiscordJoinRequest;
  */
 
@@ -35,11 +36,13 @@ public class DiscordJoinRequest extends Structure
     private static final List<String> FIELD_ORDER = Collections.unmodifiableList(Arrays.asList(
             "userId",
             "username",
+            "discriminator",
             "avatar"
     ));
 
     public String userId;
     public String username;
+    public String discriminator;
     public String avatar;
 
     @Override
